@@ -1,4 +1,4 @@
-package com.github.basp1.extralib;
+package com.github.basp1.extralib.annotations;
 
 import java.lang.annotation.*;
 
