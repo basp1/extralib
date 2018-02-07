@@ -1,5 +1,7 @@
 package com.github.basp1.extralib;
 
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
@@ -41,5 +43,21 @@ public class Lists {
         }
 
         return l;
+    }
+
+    public static double median(List<Double> source) {
+        List<Double> tmp = new ArrayList<>(source);
+        tmp.sort(Comparator.comparingDouble(a -> a));
+
+        int size = tmp.size();
+        if (size == 0) {
+            return Double.NaN;
+        } else if (size % 2 == 0) {
+            Double a = tmp.get(size / 2 - 1);
+            Double b = tmp.get(size / 2);
+            return (a + b) / 2.0;
+        } else {
+            return tmp.get(size / 2);
+        }
     }
 }

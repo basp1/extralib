@@ -47,4 +47,25 @@ public class ListsTests {
 
         assertEquals(10, Lists.lowerBound(list, 100));
     }
+
+    @Test
+    public void testMedian() {
+        List<Double> list = Arrays.asList();
+        assertEquals(Double.NaN, (double) Lists.median(list), 1e-8);
+
+        list = Arrays.asList(10d);
+        assertEquals(10d, (double) Lists.median(list), 1e-8);
+
+        list = Arrays.asList(1d, 2d);
+        assertEquals(1.5d, (double) Lists.median(list), 1e-8);
+
+        list = Arrays.asList(1d, 2d, 3d);
+        assertEquals(2d, (double) Lists.median(list), 1e-8);
+
+        list = Arrays.asList(1d, 2d, 3d, 4d);
+        assertEquals(2.5d, (double) Lists.median(list), 1e-8);
+
+        list = Arrays.asList(3d, 1d, 2d, 4d, 5d);
+        assertEquals(3d, (double) Lists.median(list), 1e-8);
+    }
 }
