@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class Lists {
-    public static <T extends Comparable<T>> Optional<T> binarySearch(List<T> list, T item) {
+    public static <T extends Comparable<? super T>> Optional<T> binarySearch(List<T> list, T item) {
         int l = 0;
         int r = list.size() - 1;
         while (l <= r) {
@@ -25,7 +25,7 @@ public class Lists {
         return Optional.empty();
     }
 
-    public static <T extends Comparable<T>> int lowerBound(List<T> list, T item) {
+    public static <T extends Comparable<? super T>> int lowerBound(List<T> list, T item) {
         int n = list.size() - 1;
         int l = 0;
         int r = n;
