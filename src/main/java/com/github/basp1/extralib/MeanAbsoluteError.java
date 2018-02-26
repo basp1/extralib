@@ -40,7 +40,7 @@ public class MeanAbsoluteError implements AccumulatedError {
 
     @Override
     public String toString() {
-        return "AccumulatedError { avg => " + String.format("%.3f%%", getAverage())
+        return "MeanAbsoluteError { avg => " + String.format("%.3f%%", getAverage())
                 + "; max => " + String.format("%.3f%%", getMax()) + " }";
     }
 }
